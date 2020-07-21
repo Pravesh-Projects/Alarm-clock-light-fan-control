@@ -7,7 +7,7 @@ int pset = 6;
 int phour = 9;
 int pmin = 13;
 int pexit = 10;
-//int buz = 0;
+//int buz = 0; //uncomment to connect buzzer
 int set = 0;
 int h = 0;
 int m = 0;
@@ -18,7 +18,7 @@ int activate = 0;
 Time t;
 void setup()
 {
-  //tone(0,0,100);
+  //tone(0,0,100); //uncomment if buzzer connected
   pinMode(7, OUTPUT);
   pinMode(8, OUTPUT);
   digitalWrite(7, HIGH);
@@ -33,7 +33,9 @@ void setup()
   lcd.setCursor(0, 1);
   lcd.print("Date: ");
   rtc.begin();   
-   
+  
+ // If using RTC for first time, uncomment below lines and 
+ // set current time and date, upload to arduino, again comment and upload
  //rtc.setTime(18 ,37 ,00); 
  //rtc.setDate(3, 6, 2019);  
 }
@@ -102,7 +104,7 @@ void loop()
       lcd.print("WAKE UP"); 
       digitalWrite(7, LOW);
       digitalWrite(8, HIGH);
-      //tone(0,400,300); 
+      //tone(0,400,300); //uncomment if buzzer connected
       //delay(1000);
       //tone(0,400,300); 
       //tone(0,400,300); 
