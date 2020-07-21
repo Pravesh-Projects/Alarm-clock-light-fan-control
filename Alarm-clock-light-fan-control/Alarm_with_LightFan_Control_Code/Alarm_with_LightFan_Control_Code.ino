@@ -54,10 +54,12 @@ void loop()
     Min = t.min;
     set = digitalRead(pset);
   }
-  if (set == HIGH){
+  if (set == HIGH)
+  {
     activate = 1;
     lcd.clear();}
-    while (activate == 1){
+    while (activate == 1)
+    {
       lcd.setCursor(0,0);
       lcd.print("set alarm");
       lcd.setCursor(0,1);
@@ -73,8 +75,9 @@ void loop()
         if(H > 23)
         {
           H = 0;
-          lcd.clear();}
-          delay(100);
+          lcd.clear();
+        }
+        delay(100);
       }
       m = digitalRead(pmin);
       if(m == HIGH)
@@ -85,8 +88,9 @@ void loop()
         if(M > 59)
         {
           M = 0;
-          lcd.clear();}
-          delay(100);
+          lcd.clear();
+        }
+        delay(100);
       }
       lcd.setCursor(5,1);
       lcd.print(H);
@@ -99,7 +103,8 @@ void loop()
         lcd.clear();
       }
     }
-    if (Hour == H && Min == M){
+    if (Hour == H && Min == M)
+    {
       lcd.setCursor(0, 0);
       lcd.print("WAKE UP"); 
       digitalWrite(7, LOW);
